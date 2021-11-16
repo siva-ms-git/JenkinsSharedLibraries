@@ -4,16 +4,16 @@ def call(String mavenGoal){
      {
        sh "mvn clean"
      }
-  else if ("${mavenGoal}" == "Compile")
+  else if ("${mavenGoal}" == "Package")
      {
-       sh "mvn clean compile"
+       sh "mvn clean package"
      }
-  else if ("${mavenGoal}" == "Test")
+  else if ("${mavenGoal}" == "Sonar")
      {
-       sh "mvn clean test"
+       sh "mvn sonar:sonar"
      }
    else if ("${mavenGoal}" == "Package")
       {
-        sh "mvn clean package"
+        sh "mvn deploy"
      }
 }
